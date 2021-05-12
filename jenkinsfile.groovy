@@ -34,7 +34,8 @@ stage('clean docker environment') {
 stage('make new docker image') {
     node('master'){
         try{
-            sh 'cd xxl-job-admin'
+            sh 'cd xxl-job-admin/'
+            sh 'pwd'
             sh 'docker build -t job:v1.0 .'
         }catch(exc){
             echo 'Make job:v1.0 docker image failed, please check the environment!'
